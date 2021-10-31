@@ -81,13 +81,13 @@
 
     <Button
         android:id="@+id/button_Main_Login"
+        style="@style/buttonMain_Login"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="@dimen/activity_horizontal_margin"
         android:text="@string/button_Main_Login"
-        style="@style/buttonMain_Login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText_Main_Password" />

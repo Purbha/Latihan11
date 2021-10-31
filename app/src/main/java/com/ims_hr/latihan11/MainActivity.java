@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -46,33 +45,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void Listen_B_Login() {
-        B_Login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String Username = ACT_Username.getText().toString().trim();
-                String Password = E_Password.getText().toString().trim();
-                if (Percobaan_Login <= 0){
-                    Muncul_Pesan(getString(R.string.msgbox_Lock));
-                    return;
-                }
-                if(TextUtils.isEmpty(Username)) {
-                    Muncul_Pesan(getString(R.string.msgbox_Username_Empty));
-                    return;
-                }
-                if(TextUtils.isEmpty(Password)) {
-                    Muncul_Pesan(getString(R.string.msgbox_Password_Empty));
-                    return;
-                }
-                if (Username.equals("almaira") && Password.equals("almaira123")){
-                    Toast.makeText(MainActivity.this, getString(R.string.msgbox_Login_Sukses), Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(MainActivity.this,UserActivity.class);
-                    intent.putExtra(EXTRA_NAMA,Username);
-                    startActivity(intent);
-                } else {
-                    Muncul_Pesan(getString(R.string.msgbox_Login_Gagal));
-                    Percobaan_Login--;
-                    Bersih();
-                }
+        B_Login.setOnClickListener(v -> {
+            String Username = ACT_Username.getText().toString().trim();
+            String Password = E_Password.getText().toString().trim();
+            if (Percobaan_Login <= 0){
+                Muncul_Pesan(getString(R.string.msgbox_Lock));
+                return;
+            }
+            if(TextUtils.isEmpty(Username)) {
+                Muncul_Pesan(getString(R.string.msgbox_Username_Empty));
+                return;
+            }
+            if(TextUtils.isEmpty(Password)) {
+                Muncul_Pesan(getString(R.string.msgbox_Password_Empty));
+                return;
+            }
+            if (Username.equals("almaira") && Password.equals("almaira123")){
+                Toast.makeText(MainActivity.this, getString(R.string.msgbox_Login_Sukses), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this,UserActivity.class);
+                intent.putExtra(EXTRA_NAMA,Username);
+                startActivity(intent);
+            } else {
+                Muncul_Pesan(getString(R.string.msgbox_Login_Gagal));
+                Percobaan_Login--;
+                Bersih();
             }
         });
     }
