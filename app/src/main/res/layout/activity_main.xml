@@ -41,6 +41,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView_Main_Banner" />
+
     <AutoCompleteTextView
         android:id="@+id/autoCompleteTextView_Main_Username"
         android:layout_width="0dp"
@@ -52,6 +53,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView_Main_Username" />
+
     <TextView
         android:id="@+id/textView_Main_Password"
         style="@style/textViewMain_Sub"

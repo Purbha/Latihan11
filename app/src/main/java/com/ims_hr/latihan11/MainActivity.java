@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private void Set_Objeck() {
         ArrayAdapter arrayAdapter = new ArrayAdapter(this,android.R.layout.select_dialog_item,List_Username);
         ACT_Username.setAdapter(arrayAdapter);
-        ACT_Username.setThreshold(1);
+        ACT_Username.setThreshold(2);
     }
 
     private void Listen_B_Login() {
@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this,UserActivity.class);
                 intent.putExtra(EXTRA_NAMA,Username);
                 startActivity(intent);
+                finish();
             } else {
                 Muncul_Pesan(getString(R.string.msgbox_Login_Gagal));
                 Percobaan_Login--;
